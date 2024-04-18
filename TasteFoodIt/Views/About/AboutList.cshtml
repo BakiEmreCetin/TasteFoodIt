@@ -1,0 +1,56 @@
+﻿@model TasteFoodIt.Entities.About
+@{
+    ViewBag.Title = "AboutList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="container-fluid" id="container-wrapper">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h4 class="m-0 font-weight-bold text-primary">Hakkımızda Paneli</h4>
+        </div>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="./">Anasayfa</a></li>
+            <li class="breadcrumb-item">Hakkımızda</li>
+            <li class="breadcrumb-item active" aria-current="page">Hakkımızda İşlemleri</li>
+        </ol>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- Form Basic -->
+            <div class="card mb-4">
+                
+                <div class="card-body">
+                    <form method="post">
+                        <div class="form-group">
+                            @Html.HiddenFor(x => x.AboutId)
+
+                            <h5 style="color: black">Hakkımızda Başlığı</h5>
+                            @*<label>Hakkımızda Başlığı</label>*@
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", placeholder = "Sayfa Başlığı Giriniz" })
+                            <br />
+                           
+
+                            <h5 style="color: black">Resim URL</h5>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control", placeholder = "Resim Url Giriniz" })
+                            <br />
+                            
+
+                            <h5 style="color: black">Açıklama</h5>
+                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", rows = 4, placeholder = "Sayfa Açıklaması Giriniz" })
+
+                        </div>
+
+                        <button type="submit" class="btn btn-danger">Güncelle</button>
+                        <br />
+                        <br />
+                        <a href="/Dashboard/Index/" class="btn btn-dark">Geri</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
